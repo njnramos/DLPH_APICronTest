@@ -4,7 +4,8 @@ defmodule Api_cron_test.Application do
 
   def start(_type, _args) do
     children = [
-      Apicron.Repo
+      Apicrontest.Application,
+      Apicron.Repo.Registry
     ]
 
     opts = [strategy: :one_for_one, name: Ecto.Supervisor]
